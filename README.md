@@ -4,7 +4,7 @@ A python script to calculate the weapon attack ratings based on your stats, upgr
 # Usage
 
 ```
-python main.py [--name "NAME"]
+python main.py --name "NAME"
                [--affinity "AFFINITY"]
                UPGRADE
                STRENGTH
