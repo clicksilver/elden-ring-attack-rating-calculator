@@ -1,6 +1,6 @@
 """
-Maps the weapon name, affinity, and upgrade level to the factors that scaling
-each Stat contribution to all damage types.
+Maps the weapon (name, affinity, and upgrade level) to the scaling factors for
+each of the main stats (strength, dexterity, intelligence, faith, arcane).
 """
 
 # Name,xx,Str +0,Dex +0,Int +0,Fai +0,Arc +0,Str +1,Dex +1,Int +1,Fai +1,Arc +1,Str +2,Dex +2,Int +2,Fai +2,Arc +2,Str +3,Dex +3,Int +3,Fai +3,Arc +3,Str +4,Dex +4,Int +4,Fai +4,Arc +4,Str +5,Dex +5,Int +5,Fai +5,Arc +5,Str +6,Dex +6,Int +6,Fai +6,Arc +6,Str +7,Dex +7,Int +7,Fai +7,Arc +7,Str +8,Dex +8,Int +8,Fai +8,Arc +8,Str +9,Dex +9,Int +9,Fai +9,Arc +9,Str +10,Dex +10,Int +10,Fai +10,Arc +10,Str +11,Dex +11,Int +11,Fai +11,Arc +11,Str +12,Dex +12,Int +12,Fai +12,Arc +12,Str +13,Dex +13,Int +13,Fai +13,Arc +13,Str +14,Dex +14,Int +14,Fai +14,Arc +14,Str +15,Dex +15,Int +15,Fai +15,Arc +15,Str +16,Dex +16,Int +16,Fai +16,Arc +16,Str +17,Dex +17,Int +17,Fai +17,Arc +17,Str +18,Dex +18,Int +18,Fai +18,Arc +18,Str +19,Dex +19,Int +19,Fai +19,Arc +19,Str +20,Dex +20,Int +20,Fai +20,Arc +20,Str +21,Dex +21,Int +21,Fai +21,Arc +21,Str +22,Dex +22,Int +22,Fai +22,Arc +22,Str +23,Dex +23,Int +23,Fai +23,Arc +23,Str +24,Dex +24,Int +24,Fai +24,Arc +24,Str +25,Dex +25,Int +25,Fai +25,Arc +25

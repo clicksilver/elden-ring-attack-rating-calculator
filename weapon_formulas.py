@@ -1,16 +1,31 @@
 """
-All the specific formulae that need to be used to calculate attack rating based
-on stats.
+Fairly complicated system to compute the weapon's specific "correction factor"
+for each Damage-Stat pair:
+    Phys-Str
+    Phys-Dex
+    ...
+    Magi-Int
+    ...
+    Holy-Fai
+    Holy-Arc
 
-A formula has an ID which is:
-* Number from [0-16]
-* Letter from [A-D]
+That's 25 different pairs, each with its own unique correction factor.
 
-Each individual formula then has dependent coefficients, and the minimum value
-for the stat to which it is applied (limit).
+The formulas are based on the Formula ID which an integer from
+    {0, 1, 2, 4, 7, 8, 12, 14, 15, 16}
 
-The first part of the ID determines the group of applicable formula, and the
-second part of the ID determines the range which specialization is applied.
+Each stat then determines the specific sub-formula based on the range:
+    A: usually >80
+    B: usually >60
+    C: usually >20
+    D: everything else
+
+The limits vary based on the Formula ID.
+
+Each factor is calculated with:
+    - the Formula ID as input
+    - the Subtype based on the Stat Value
+Which is then computed using the correct formula and coefficients
 """
 
 import sys
@@ -29,7 +44,7 @@ def formula_0D(stat, limit, coeffs):
 def formula_4D(stat, limit, coeffs):
     return coeffs[0] * (stat - 1) / coeffs[1]
 
-# If a formula is tagged as "original", then this the first time it is reused
+# If a formula is tagged as "original", then this the first time it is defined
 # in the context of this map. Otherwise it is reusing a previously defined
 # formula.
 formula_map = {

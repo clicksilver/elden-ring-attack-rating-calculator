@@ -1,5 +1,5 @@
 """
-Maps the weapon name, affinity, upgrade to the base attack ratings in each of
+Maps the weapon (name, affinity, upgrade) to the base attack ratings in each of
 the damage types.
 """
 

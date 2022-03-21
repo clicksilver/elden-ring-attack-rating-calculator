@@ -1,6 +1,12 @@
 """
-Lookup Table for a weapon (name and affinity) to it's formula type for each
-damage type.
+Lookup Table for a weapon (name and affinity) to it's Formula IDs for each
+damage type, and it's Scaling ID.
+
+Formula ID: IDs for each of the main damage types
+            (Phys, Magic, Fire, Lightning, Holy)
+
+Scaling ID: ID which maps to the scaling configuration of the weapon (which
+            decides if a weapon's damage-type scales with each stat).
 """
 import lookup_scaling_id_to_config as scaling_config
 

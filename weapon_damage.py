@@ -1,43 +1,17 @@
 """
-inputs to figure out weapon parameters
+Computes the weapon damage breakdown given:
 
-NAME weapon name
-AFFI weapon affinity (none, heavy, keen, etc.)
-UPLV upgrade level (0-10 or 0-25)
-
-NAME and AFFI decide whether each of the Damage Types scales off of the
-Offensive Stats:
-
-Damage Types:
-    Physical
-    Magic
-    Fire
-    Lightning
-    Holy
-
-Offensive Stats:
-    Strength
-    Dexterity
-    Intelligence
-    Faith
-    Arcane
-
-ScalingType: 5x5 binary value Matrix
-
-        Stre    Dext    Inte    Fait    Arca
-Phys    -       -       -       -       -
-Magi    -       -       -       -       -
-Fire    -       -       -       -       -
-Ligh    -       -       -       -       -
-Holy    -       -       -       -       -
-
+    - Weapon Name
+    - Affinity (if possible)
+    - Upgrade Level
+    - Stat array
 """
 import stats
 
 import lookup_weapon_name_affinity_upgrade_base_rating as war
 import lookup_scaling_id_to_config as sc
 import lookup_weapon_name_affinity_upgrade_stat_scaling_factor as ssf
-import lookup_weapon_name_affinity_formula_type as ft
+import lookup_weapon_name_affinity_info as wif
 import weapon_formulas as wf
 
 import math
@@ -69,7 +43,7 @@ def ComputeWeaponParams(name, affinity, level, stats):
     wep_ar = war.GetWeaponAttackRatings(name, affinity, level)
     
     # tuple of formula IDs by damage type, and scaling IDs
-    wep_info = ft.GetWeaponInfo(name, affinity)
+    wep_info = wif.GetWeaponInfo(name, affinity)
     wisc = wep_info.scaling_config
 
     # tuple of factors affecting stat scaling per stat

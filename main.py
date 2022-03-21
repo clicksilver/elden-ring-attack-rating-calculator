@@ -1,4 +1,12 @@
 """
+python main.py --name "NAME"
+               [--affinity "AFFINITY"]
+               UPGRADE
+               STRENGTH
+               DEXTERITY
+               INTELLIGENCE
+               FAITH
+               ARCANE
 """
 import argparse
 import stats
