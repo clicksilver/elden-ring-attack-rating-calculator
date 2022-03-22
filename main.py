@@ -30,5 +30,8 @@ if __name__ == "__main__":
                                                          args.intelligence,
                                                          args.faith,
                                                          args.arcane))
-    print(wdmg)
+
+    print('{:2}/{:2}/{:2}/{:2}/{:2} {} {} +{} {}'.format(args.strength,
+        args.dexterity, args.intelligence, args.faith, args.arcane,
+        args.affinity, args.name, args.upgrade, wdmg))
 

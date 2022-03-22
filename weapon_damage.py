@@ -31,7 +31,7 @@ class WeaponDamage:
         self.holy_dmg = holy_dmg
         
     def __str__(self):
-        return '{}+{} / {}+{} / {}+{} / {}+{} / {}+{}'.format(
+        return '{}+{}/{}+{}/{}+{}/{}+{}/{}+{}'.format(
                          self.phys_ar, self.phys_dmg,
                          self.magi_ar, self.magi_dmg,
                          self.fire_ar, self.fire_dmg,
