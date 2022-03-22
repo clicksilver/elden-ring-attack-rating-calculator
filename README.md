@@ -18,6 +18,11 @@ python main.py --name "NAME"
 python main.py --name "Dagger" --affinity "Flame Art" 10 20 30 10 15 40
 ```
 
+# To Do
+
+* Passive Effects like Blood, Frost, Poison, etc
+* Sorcery and Incantation Scaling
+
 # Credit
 
 All the formulas and calculation comes from the creators of this spreadsheet:
