@@ -27,7 +27,7 @@ python main.py --name "Dagger" --affinity "Flame Art" 10 20 30 10 15 40
 
 All the formulas and calculation comes from the creators of this spreadsheet:
 
-https://docs.google.com/spreadsheets/d/1QzsZP9fYaVCjLjCbzggPo2ih0Nr8C-fKs6JQlrcUU00/edit#gid=0
+https://docs.google.com/spreadsheets/d/1JdkVb-llZHPhMD-IwO8d2o1jtHhiTIXbcJv0YzC8ZHY/copy
 
 https://www.reddit.com/r/Eldenring/comments/tbco46/elden_ring_weapon_calculator/i0xlhi1/?context=3
 
