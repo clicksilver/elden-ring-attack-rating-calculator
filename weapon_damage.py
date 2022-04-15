@@ -17,7 +17,7 @@ import math
 
 class WeaponDamage:
     def __init__(self, phys_ar, phys_dmg, magi_ar, magi_dmg, fire_ar, fire_dmg,
-                 litg_ar, litg_dmg, holy_ar, holy_dmg):
+                 litg_ar, litg_dmg, holy_ar, holy_dmg, sorc_scaling):
         self.phys_ar = phys_ar
         self.magi_ar = magi_ar
         self.fire_ar = fire_ar
@@ -28,6 +28,7 @@ class WeaponDamage:
         self.fire_dmg = fire_dmg
         self.litg_dmg = litg_dmg
         self.holy_dmg = holy_dmg
+        self.sorc_scaling = sorc_scaling
         
     def __str__(self):
         return '{}+{}/{}+{}/{}+{}/{}+{}/{}+{}'.format(
@@ -130,11 +131,19 @@ def ComputeWeaponParams(name, affinity, level, stats):
     holy_arca_dmg = holy_ar * arca_fac * holy_arca_fac / 100
     holy_damage = holy_stre_dmg + holy_dext_dmg + holy_inte_dmg + holy_fait_dmg + holy_arca_dmg
 
+    # sorcery scaling
+    sorc_scaling = (stre_fac * magi_stre_fac +
+                    dext_fac * magi_dext_fac +
+                    inte_fac * magi_inte_fac +
+                    fait_fac * magi_fait_fac +
+                    arca_fac * magi_arca_fac + 100)
+
     return WeaponDamage(math.trunc(phys_ar), math.floor(phys_damage),
                         math.trunc(magi_ar), math.floor(magi_damage),
                         math.trunc(fire_ar), math.floor(fire_damage),
                         math.trunc(litg_ar), math.floor(litg_damage),
-                        math.trunc(holy_ar), math.floor(holy_damage))
+                        math.trunc(holy_ar), math.floor(holy_damage),
+                        sorc_scaling)
 
 if __name__ == "__main__":
     stats = stats.Stats(32, 22, 9, 27, 9)
