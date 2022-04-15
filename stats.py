@@ -2,7 +2,13 @@
 Class container for stats array
 """
 
-class Stats:
+STR='stre'
+DEX='dext'
+INT='inte'
+FAI='fait'
+ARC='arca'
+
+class Stats(object):
     def __init__(self, stre, dext=None, inte=None, fait=None, arca=None):
         if isinstance(stre, list):
             self.stre = stre[0]
@@ -16,3 +22,9 @@ class Stats:
             self.inte = inte
             self.fait = fait
             self.arca = arca
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
+    def __setitem__(self, key, value):
+        setattr(self, key, value)
