@@ -37,6 +37,13 @@ class WeaponDamage:
                          self.fire_ar, self.fire_dmg,
                          self.litg_ar, self.litg_dmg,
                          self.holy_ar, self.holy_dmg)
+    
+    def total_damage(self):
+        return (self.phys_ar + self.phys_dmg +
+                self.magi_ar + self.magi_dmg +
+                self.fire_ar + self.fire_dmg +
+                self.litg_ar + self.litg_dmg +
+                self.holy_ar + self.holy_dmg)
 
 def ComputeWeaponParams(name, affinity, level, stats):
     # base attack ratings for each damage type
